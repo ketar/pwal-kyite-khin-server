@@ -1,3 +1,2 @@
-# PhandeeYar
-
-a [Sails](http://sailsjs.org) application
+# pwal-kyite-khin-server
+A nodejs event tracking platform for Yangon
