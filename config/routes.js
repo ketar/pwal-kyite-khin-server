@@ -44,6 +44,7 @@ module.exports.routes = {
   'post /v0.1/event':'v_0_1/EventController.create',
   'put /v0.1/event/:id':'v_0_1/EventController.update',
   'get /v0.1/event/:id?':'v_0_1/EventController.find',
+  'delete /v0.1/event/:id?':'v_0_1/EventController.destroy',
 
 
 

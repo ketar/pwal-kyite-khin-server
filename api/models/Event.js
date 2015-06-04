@@ -7,7 +7,7 @@
 */
 
 tb_event = {
-		"migrate":"drop", // auto create drop and recreate table, First Time Use Only!
+		//"migrate":"drop", // auto create drop and recreate table, First Time Use Only!
 		tableName:"tb_event",
 		attributes: {
 		  	_id:{
@@ -20,7 +20,7 @@ tb_event = {
 		  	name:{
 		  		type:'string',
 		  		columnName:'name',
-		  		require:true
+		  		required:true
 		    },
 		    type:{
 		    	type:'string',
