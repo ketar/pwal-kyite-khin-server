@@ -41,17 +41,24 @@ module.exports.routes = {
   'get /v0.1/system/token':'v_0_1/SystemController.gettoken',
 
   //Events Routes
-  'post /event':'EventController.create',
-  'put /event/:id':'EventController.update',
-  'get /event/:id?':'EventController.find',
+  'post /v0.1/event':'v_0_1/EventController.create',
+  'put /v0.1/event/:id':'v_0_1/EventController.update',
+  'get /v0.1/event/:id?':'v_0_1/EventController.find',
 
 
 
   //Place Routes
-  'get /place/:id?':'PlaceController.find',
-  'post /place/':'PlaceController.create',
-  'put /place/:id?':'PlaceController.update',
-  'delete /place/:id?':'PlaceController.destroy',
+  'get /v0.1/place/:id?':'v_0_1/PlaceController.find',
+  'post /v0.1/place/':'v_0_1/PlaceController.create',
+  'put /v0.1/place/:id?':'v_0_1/PlaceController.update',
+  'delete /v0.1/place/:id?':'v_0_1/PlaceController.destroy',
+
+
+  //Speaker Routes
+  'get /v0.1/speaker/:id?':'v_0_1/SpeakerController.find',
+  'post /v0.1/speaker/':'v_0_1/SpeakerController.create',
+  'put /v0.1/speaker/:id?':'v_0_1/SpeakerController.update',
+  'delete /v0.1/speaker/:id?':'v_0_1/SpeakerController.destroy',
   
 
 

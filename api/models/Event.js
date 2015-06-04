@@ -11,7 +11,7 @@ tb_event = {
 		tableName:"tb_event",
 		attributes: {
 		  	_id:{
-		  		type:'integer',
+		  		type:'string',
 		  		columnName:'_id',
 		  		unique:true,
 
