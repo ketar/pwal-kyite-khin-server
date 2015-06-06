@@ -7,7 +7,7 @@ var PlaceController={
 	create:function(req,res,next){
 		var place={};
 		place._id=IDGeneratorService.getGUID.GET_ID(2);
-		place.name=(req.params.name!==undefined)?req.body.name:res.json({"error":"Invalid Field"});		
+		place.name=(req.body.name!==undefined)?req.body.name:res.json({"error":"Invalid Field"});		
 		place.description=(req.body.desc!==undefined)?req.body.desc:res.json({"error":"Invalid Description"});		
 		place.landmark=(req.body.landmark!==undefined)?req.body.landmark:res.json({"error":"Invalid Description"});		
 		place.route=(req.body.route!==undefined)?req.body.route:res.json({"error":"Invalid Description"});		
@@ -18,7 +18,18 @@ var PlaceController={
 		//res.json({"data":place});
 	},
 	update:function(req,res,next){
-		res.json({"key":"I am update"});
+		//res.json({"key":"I am update"});
+		var place={
+			name:(req.body.name!==undefined)?req.body.name:res.json({"error":"Invalid Field"}),		
+			description:(req.body.desc!==undefined)?req.body.desc:res.json({"error":"Invalid Description"}),
+			landmark:(req.body.landmark!==undefined)?req.body.landmark:res.json({"error":"Invalid Description"}),
+			route:(req.body.route!==undefined)?req.body.route:res.json({"error":"Invalid Description"})
+		};
+		sails.models.place.update({_id:res.params.id},place,function(err,Object){
+			if(!Object){res.json({"data":Object})}else{
+				res.json({"error":err});
+			}
+		});
 	},
 	find:function(req,res,next){
 		if(req.params.id){
