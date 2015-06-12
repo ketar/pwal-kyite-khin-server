@@ -11,13 +11,13 @@ module.exports = {
 		var obj_event={
 			_id:IDGeneratorService.getGUID.GET_ID(2),
 			name:(req.body.name!==undefined)?req.body.name:res.json({"error":"Invalid Field"},400),
-			type:(req.body.type!==undefined)?req.body.type:res.json({"error":"Invalid Field"},500),
-			due_date:(req.body.duedate!==undefined)?req.body.duedate:res.json({"error":"Invalid Field"},500),
-			speaker_name:(req.body.speakername!==undefined)?req.body.speakername:res.json({"error":"Invalid Field"},500),
-			description:(req.body.desc!==undefined)?req.body.desc:res.json({"error":"Invalid Field"}),
-			is_complete:(req.body.iscomplete!==undefined)?req.body.iscomplete:res.json({"error":"Invalid Field"},500),
-			is_ondue:(req.body.due!==undefined)?req.body.due:res.json({"error":"Invalid Field"},500),
-			place_id:(req.body.placeid!==undefined)?req.body.placeid:res.json({"error":"Invalid Field"},500)
+			type:(req.body.type!==undefined)?req.body.type:res.json({"error":"Invalid Field"},400),
+			due_date:(req.body.duedate!==undefined)?req.body.duedate:res.json({"error":"Invalid Field"},400),
+			speaker_name:(req.body.speakername!==undefined)?req.body.speakername:res.json({"error":"Invalid Field"},400),
+			description:(req.body.desc!==undefined)?req.body.desc:res.json({"error":"Invalid Field"},400),
+			is_complete:(req.body.iscomplete!==undefined)?req.body.iscomplete:res.json({"error":"Invalid Field"},400),
+			is_ondue:(req.body.due!==undefined)?req.body.due:res.json({"error":"Invalid Field"},400),
+			place_id:(req.body.placeid!==undefined)?req.body.placeid:res.json({"error":"Invalid Field"},400)
 		};
 		sails.models.event.create(obj_event,function(err,Object){
 			if(err) return res.json({"error":err},500);
