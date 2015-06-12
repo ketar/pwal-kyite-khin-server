@@ -7,10 +7,10 @@ var PlaceController={
 	create:function(req,res,next){
 		var place={};
 		place._id=IDGeneratorService.getGUID.GET_ID(2);
-		place.name=(req.body.name!==undefined)?req.body.name:res.json({"error":"Invalid Field"});		
-		place.description=(req.body.desc!==undefined)?req.body.desc:res.json({"error":"Invalid Description"});		
-		place.landmark=(req.body.landmark!==undefined)?req.body.landmark:res.json({"error":"Invalid Description"});		
-		place.route=(req.body.route!==undefined)?req.body.route:res.json({"error":"Invalid Description"});		
+		place.name=(req.body.name!==undefined)?req.body.name:res.json({"error":"Invalid Field"},400);		
+		place.description=(req.body.desc!==undefined)?req.body.desc:res.json({"error":"Invalid Description"},400);		
+		place.landmark=(req.body.landmark!==undefined)?req.body.landmark:res.json({"error":"Invalid Description"},400);		
+		place.route=(req.body.route!==undefined)?req.body.route:res.json({"error":"Invalid Description"},400);		
 
 		sails.models.place.create(place,function(err,Object){
 			res.json({"data":Object});
