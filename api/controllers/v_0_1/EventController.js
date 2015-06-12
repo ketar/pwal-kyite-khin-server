@@ -10,7 +10,7 @@ module.exports = {
 		 
 		var obj_event={
 			_id:IDGeneratorService.getGUID.GET_ID(2),
-			name:(req.body.name!==undefined)?req.body.name:res.json({"error":"Invalid Field"},500),
+			name:(req.body.name!==undefined)?req.body.name:res.json({"error":"Invalid Field"},400),
 			type:(req.body.type!==undefined)?req.body.type:res.json({"error":"Invalid Field"},500),
 			due_date:(req.body.duedate!==undefined)?req.body.duedate:res.json({"error":"Invalid Field"},500),
 			speaker_name:(req.body.speakername!==undefined)?req.body.speakername:res.json({"error":"Invalid Field"},500),
